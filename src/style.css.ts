@@ -27,8 +27,16 @@ const box = style({
   backgroundColor: '#EDEEF0',
 });
 
+const row = style({
+  display: 'flex',
+  gap: '8px',
+  flexDirection: 'row',
+  alignItems: 'flex-end',
+});
+
 export const appSt = {
   bottomBtn,
   container,
   box,
+  row,
 };
