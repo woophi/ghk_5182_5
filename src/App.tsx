@@ -11,11 +11,14 @@ import { useEffect, useState } from 'react';
 import polusImg from './assets/polus.png';
 import { LS, LSKeys } from './ls';
 import { appSt } from './style.css';
-import { ThxLayout } from './thx/ThxLayout';
+
+const sduiLink =
+  'alfabank://sdui_screen?screenName=InvestmentLongread&fromCurrent=true&endpoint=v1/invest-main-screen-view/investment-longread/52456%3flocation=AM%26campaignCode=GH';
+const sduiLink2 =
+  'alfabank://sdui_screen?screenName=InvestmentLongread&fromCurrent=true&endpoint=v1/invest-main-screen-view/investment-longread/52455%3flocation=AM%26campaignCode=GH';
 
 export const App = () => {
   const [loading, setLoading] = useState(false);
-  const [thxShow, setThx] = useState(LS.getItem(LSKeys.ShowThx, false));
 
   useEffect(() => {
     if (!LS.getItem(LSKeys.UserId, null)) {
@@ -26,22 +29,14 @@ export const App = () => {
   const submitWith = () => {
     window.gtag('event', '5182_buy1_var5');
     setLoading(true);
-    // LS.setItem(LSKeys.ShowThx, true);
-    setThx(true);
-    setLoading(false);
+    window.location.replace(sduiLink);
   };
   const submitWithout = () => {
     window.gtag('event', '5182_buy2_var5');
 
     setLoading(true);
-    // LS.setItem(LSKeys.ShowThx, true);
-    setThx(true);
-    setLoading(false);
+    window.location.replace(sduiLink2);
   };
-
-  if (thxShow) {
-    return <ThxLayout />;
-  }
 
   return (
     <>
