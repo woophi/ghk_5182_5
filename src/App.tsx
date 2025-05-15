@@ -81,7 +81,7 @@ export const App = () => {
               Цена сейчас
             </Typography.Text>
             <Typography.TitleResponsive tag="h2" view="xsmall" font="system" weight="semibold">
-              1 789,6 ₽
+              1 695,6 ₽
             </Typography.TitleResponsive>
           </Grid.Col>
           <Grid.Col width="6">
